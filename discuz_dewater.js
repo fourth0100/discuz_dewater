@@ -23,7 +23,7 @@ function floor_path() {
 
 function page_charset() {
     var h = $('head').html();
-    var h_m = h.match(/.*charset="(.*?)".*/);
+    var h_m = h.match(/<meta[^>]+charset=['"]?(.*?)['"]?[\/\s>]/i);
     if(!h_m || h_m[1]) return 'gbk';
     return h_m[1];
 }
